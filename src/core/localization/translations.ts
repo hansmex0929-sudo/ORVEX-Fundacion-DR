@@ -34,6 +34,11 @@ export const translations = {
     decisionReason: "Motivo de la decisión", decisionReasonPlaceholder: "Requerido para rechazo, devolución o escalamiento",
     approve: "Aprobar", reject: "Rechazar", returnCorrection: "Devolver para corrección", escalate: "Escalar",
     humanDecision: "Las decisiones requieren revisión humana y quedan registradas en auditoría.",
+    deliveryRecord: "Registro de entrega", recipient: "Persona receptora", deliveredAt: "Fecha y hora de entrega",
+    deliveryLocation: "Ubicación de entrega", proofPhoto: "Fotografía de evidencia", signature: "Firma o confirmación",
+    acknowledgement: "La persona receptora confirma que recibió los artículos indicados.",
+    immutableProof: "Después de enviar, la evidencia no se reemplaza silenciosamente. Toda corrección crea un evento de auditoría.",
+    capturePhoto: "Adjuntar fotografía sintética", captureSignature: "Capturar confirmación", submitProof: "Enviar prueba de entrega",
   },
   en: {
     appName: "ORVEX Foundation DR", search: "Search ORVEX", location: "Santo Domingo East",
@@ -68,6 +73,11 @@ export const translations = {
     decisionReason: "Decision reason", decisionReasonPlaceholder: "Required for rejection, return, or escalation",
     approve: "Approve", reject: "Reject", returnCorrection: "Return for correction", escalate: "Escalate",
     humanDecision: "Decisions require human review and are recorded in the audit trail.",
+    deliveryRecord: "Delivery record", recipient: "Recipient", deliveredAt: "Delivery date and time",
+    deliveryLocation: "Delivery location", proofPhoto: "Evidence photograph", signature: "Signature or confirmation",
+    acknowledgement: "The recipient confirms receipt of the listed items.",
+    immutableProof: "After submission, evidence is not silently replaced. Every correction creates an audit event.",
+    capturePhoto: "Attach synthetic photograph", captureSignature: "Capture confirmation", submitProof: "Submit proof of delivery",
   },
 } as const;
 
