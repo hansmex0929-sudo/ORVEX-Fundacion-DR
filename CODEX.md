@@ -18,6 +18,9 @@ You are implementing ORVEX Fundación DR. Treat the documents in `/docs` as the 
 12. One screen must equal one route/page/view. Do not combine multiple application screens into a collage, split dashboard, or composite page.
 13. Every screen must display its unique sequential page ID and a language selector that preserves the current workflow when changing language.
 14. Use the official ORVEX spelling, logo, and red/black/white visual identity. Never write ORVIX.
+15. Read `docs/CAMPUS_MASTER_PLAN.md` as the controlling campus and employee-services specification whenever implementing facilities, employee services, access control, appointments, occupational health, childcare, cafeteria, wellness, uniforms, laundry, room booking, maintenance, or campus operations.
+16. The master headquarters building is four floors of approximately 100,000 square feet each, totaling approximately 400,000 square feet. The entire fourth floor is reserved for employee-only services; do not revert to the former three-floor concept.
+17. Employee medical, counseling, childcare, benefits, and related service records require strict role-based access, privacy controls, and audit logging.
 
 ## Preferred technical baseline
 
