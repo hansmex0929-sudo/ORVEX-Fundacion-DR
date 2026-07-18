@@ -28,6 +28,12 @@ export const translations = {
     runDuplicateSearch: "Buscar posibles duplicados", householdName: "Nombre del hogar", primaryContact: "Contacto principal",
     address: "Dirección", householdMembers: "Miembros estimados",
     searchResults: "Resultados de pantallas", noSearchResults: "No se encontraron pantallas permitidas",
+    approvalQueue: "Solicitudes pendientes de revisión humana", request: "Solicitud", requestedAid: "Asistencia solicitada",
+    evidence: "Evidencia de apoyo", foodPackage: "Paquete alimentario familiar", emergencyTransport: "Transporte de emergencia",
+    schoolSupplies: "Útiles escolares", selectRequest: "Seleccione una solicitud para revisar sus detalles",
+    decisionReason: "Motivo de la decisión", decisionReasonPlaceholder: "Requerido para rechazo, devolución o escalamiento",
+    approve: "Aprobar", reject: "Rechazar", returnCorrection: "Devolver para corrección", escalate: "Escalar",
+    humanDecision: "Las decisiones requieren revisión humana y quedan registradas en auditoría.",
   },
   en: {
     appName: "ORVEX Foundation DR", search: "Search ORVEX", location: "Santo Domingo East",
@@ -56,6 +62,12 @@ export const translations = {
     runDuplicateSearch: "Search for possible duplicates", householdName: "Household name", primaryContact: "Primary contact",
     address: "Address", householdMembers: "Estimated members",
     searchResults: "Screen results", noSearchResults: "No permitted screens found",
+    approvalQueue: "Requests awaiting human review", request: "Request", requestedAid: "Requested assistance",
+    evidence: "Supporting evidence", foodPackage: "Family food package", emergencyTransport: "Emergency transportation",
+    schoolSupplies: "School supplies", selectRequest: "Select a request to review its details",
+    decisionReason: "Decision reason", decisionReasonPlaceholder: "Required for rejection, return, or escalation",
+    approve: "Approve", reject: "Reject", returnCorrection: "Return for correction", escalate: "Escalate",
+    humanDecision: "Decisions require human review and are recorded in the audit trail.",
   },
 } as const;
 
