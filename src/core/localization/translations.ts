@@ -83,6 +83,13 @@ export const translations = {
     foodProgramme: "Alimentación", educationProgramme: "Educación", healthProgramme: "Salud", housingProgramme: "Vivienda",
     executiveQueue: "Cola ejecutiva", budgetException: "Excepción de presupuesto", safeguardingReview: "Revisión de protección",
     inventoryShortage: "Escasez prevista de inventario", decisionDue: "Decisión requerida", privacySafeMetrics: "Los indicadores agregados no muestran datos personales ni registros restringidos.",
+    assistanceRequests: "Solicitudes de asistencia", approvedThisMonth: "Aprobadas este mes", awaitingDecision: "Esperando decisión",
+    duplicateAlerts: "Alertas de beneficio duplicado", assistanceCategories: "Categorías de asistencia", requestQueue: "Cola de solicitudes",
+    cashProgramme: "Efectivo", medicineProgramme: "Medicinas", transportProgramme: "Transporte",
+    duplicateCheck: "Revisión de duplicados", clear: "Sin coincidencias", possibleMatch: "Posible coincidencia",
+    eligibilityStatus: "Elegibilidad", eligible: "Elegible", needsReview: "Requiere revisión", requestedOn: "Solicitada",
+    assistanceSafeguard: "Las alertas no rechazan solicitudes automáticamente. Un usuario autorizado debe revisar evidencia, límites y posibles coincidencias.",
+    openRequest: "Abrir solicitud",
   },
   en: {
     appName: "ORVEX Foundation DR", search: "Search ORVEX", location: "Santo Domingo East",
@@ -166,6 +173,13 @@ export const translations = {
     foodProgramme: "Food", educationProgramme: "Education", healthProgramme: "Health", housingProgramme: "Housing",
     executiveQueue: "Executive queue", budgetException: "Budget exception", safeguardingReview: "Safeguarding review",
     inventoryShortage: "Forecast inventory shortage", decisionDue: "Decision required", privacySafeMetrics: "Aggregate indicators do not expose personal data or restricted records.",
+    assistanceRequests: "Assistance requests", approvedThisMonth: "Approved this month", awaitingDecision: "Awaiting decision",
+    duplicateAlerts: "Duplicate-benefit alerts", assistanceCategories: "Assistance categories", requestQueue: "Request queue",
+    cashProgramme: "Cash", medicineProgramme: "Medicine", transportProgramme: "Transportation",
+    duplicateCheck: "Duplicate check", clear: "No matches", possibleMatch: "Possible match",
+    eligibilityStatus: "Eligibility", eligible: "Eligible", needsReview: "Needs review", requestedOn: "Requested",
+    assistanceSafeguard: "Alerts do not automatically reject requests. An authorized user must review evidence, limits, and possible matches.",
+    openRequest: "Open request",
   },
 } as const;
 
