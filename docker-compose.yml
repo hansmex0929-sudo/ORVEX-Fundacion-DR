@@ -1,0 +1,18 @@
+services:
+  postgres:
+    image: postgres:17-alpine
+    environment:
+      POSTGRES_DB: orvex_foundacion
+      POSTGRES_USER: orvex
+      POSTGRES_PASSWORD: local-development-only
+    ports:
+      - "5432:5432"
+    volumes:
+      - orvex_postgres:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U orvex -d orvex_foundacion"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+volumes:
+  orvex_postgres:

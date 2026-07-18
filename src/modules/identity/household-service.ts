@@ -1,0 +1,4 @@
+import {z} from "zod";import type {AuthContext} from "@/core/authorization/rbac";import {requirePermission} from "@/core/authorization/rbac";
+export const addressSchema=z.object({line1:z.string().min(1),sector:z.string().optional(),municipality:z.string().min(1),province:z.string().min(1),countryCode:z.literal("DO"),latitude:z.number().min(-90).max(90).optional(),longitude:z.number().min(-180).max(180).optional()});
+export const membershipSchema=z.object({personId:z.string().min(1),householdId:z.string().min(1),role:z.enum(["HEAD","SPOUSE","CHILD","DEPENDENT","OTHER"]),startDate:z.coerce.date(),endDate:z.coerce.date().optional()}).refine((v)=>!v.endDate||v.endDate>=v.startDate,"Membership end must follow start");
+export function validateHouseholdWrite(context:AuthContext,input:unknown){requirePermission(context,"household.write");return membershipSchema.parse(input)}
