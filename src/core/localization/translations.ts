@@ -51,6 +51,13 @@ export const translations = {
     highFoodRisk: "Riesgo alimentario alto", riskFactors: "Factores considerados", answersRecorded: "Respuestas afirmativas o frecuentes",
     childFactor: "Presencia de menores", recentAssessment: "Evaluación actual", advisoryOnly: "Esta puntuación es orientativa. No puede negar asistencia y requiere decisión humana documentada.",
     saveAssessment: "Guardar evaluación sintética", sendCaseReview: "Enviar a revisión del caso",
+    aiRecommendations: "Recomendaciones pendientes de revisión", modelVersion: "Versión del modelo", confidence: "Confianza",
+    explanation: "Explicación", recommendedAction: "Acción recomendada", reviewRecommendation: "Revisar recomendación",
+    priorityRecommendation: "Priorizar revisión de asistencia alimentaria", duplicateRecommendation: "Revisar posible registro duplicado",
+    inventoryRecommendation: "Preparar inventario para demanda prevista", priorityExplanation: "Respuestas alimentarias recientes, menores en el hogar y solicitud activa.",
+    duplicateExplanation: "Coincidencia parcial de nombre, teléfono y sector; requiere comparación humana.",
+    inventoryExplanation: "La tendencia sintética indica mayor demanda de paquetes durante los próximos 14 días.",
+    aiAdvisory: "La IA no aprueba, rechaza ni modifica registros. Una persona autorizada debe revisar y documentar cada decisión.",
   },
   en: {
     appName: "ORVEX Foundation DR", search: "Search ORVEX", location: "Santo Domingo East",
@@ -102,6 +109,13 @@ export const translations = {
     highFoodRisk: "High food-security risk", riskFactors: "Factors considered", answersRecorded: "Affirmative or frequent responses",
     childFactor: "Children present", recentAssessment: "Current assessment", advisoryOnly: "This score is advisory. It cannot deny assistance and requires a documented human decision.",
     saveAssessment: "Save synthetic assessment", sendCaseReview: "Send for case review",
+    aiRecommendations: "Recommendations awaiting review", modelVersion: "Model version", confidence: "Confidence",
+    explanation: "Explanation", recommendedAction: "Recommended action", reviewRecommendation: "Review recommendation",
+    priorityRecommendation: "Prioritize food-assistance review", duplicateRecommendation: "Review possible duplicate record",
+    inventoryRecommendation: "Prepare inventory for forecast demand", priorityExplanation: "Recent food-security responses, children in the household, and an active request.",
+    duplicateExplanation: "Partial name, phone, and neighborhood match; human comparison is required.",
+    inventoryExplanation: "The synthetic trend indicates higher package demand during the next 14 days.",
+    aiAdvisory: "AI does not approve, reject, or modify records. An authorized person must review and document every decision.",
   },
 } as const;
 
