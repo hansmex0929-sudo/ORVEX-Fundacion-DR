@@ -65,6 +65,12 @@ export const translations = {
     restrictedEvents: "Eventos restringidos recientes", sensitiveView: "Vista de registro sensible", exportRequested: "Exportación solicitada",
     permissionDenied: "Acceso no autorizado bloqueado", protectedSummary: "Los detalles sensibles están ocultos; solo se muestran metadatos permitidos.",
     openCompliance: "Abrir revisión",
+    caseSummary: "Resumen del caso", assignedWorker: "Trabajador asignado", openedDate: "Fecha de apertura",
+    caseGoals: "Metas del caso", referrals: "Referimientos", caseTimeline: "Cronología del caso",
+    stabilizeFood: "Estabilizar acceso mensual a alimentos", schoolEnrollment: "Confirmar continuidad escolar",
+    housingReferral: "Referimiento para evaluación de vivienda", clinicReferral: "Referimiento a clínica comunitaria",
+    homeVisitCompleted: "Visita domiciliaria completada", casePlanUpdated: "Plan del caso actualizado",
+    referralSent: "Referimiento comunitario enviado", addCaseNote: "Agregar nota sintética", restrictedCaseNote: "Las notas sensibles requieren permisos elevados y acceso registrado.",
   },
   en: {
     appName: "ORVEX Foundation DR", search: "Search ORVEX", location: "Santo Domingo East",
@@ -130,6 +136,12 @@ export const translations = {
     restrictedEvents: "Recent restricted events", sensitiveView: "Sensitive record viewed", exportRequested: "Export requested",
     permissionDenied: "Unauthorized access blocked", protectedSummary: "Sensitive details are hidden; only permitted metadata is shown.",
     openCompliance: "Open review",
+    caseSummary: "Case summary", assignedWorker: "Assigned worker", openedDate: "Opened date",
+    caseGoals: "Case goals", referrals: "Referrals", caseTimeline: "Case timeline",
+    stabilizeFood: "Stabilize monthly access to food", schoolEnrollment: "Confirm continued school enrollment",
+    housingReferral: "Housing assessment referral", clinicReferral: "Community clinic referral",
+    homeVisitCompleted: "Home visit completed", casePlanUpdated: "Case plan updated",
+    referralSent: "Community referral sent", addCaseNote: "Add synthetic note", restrictedCaseNote: "Sensitive notes require elevated permission and logged access.",
   },
 } as const;
 
