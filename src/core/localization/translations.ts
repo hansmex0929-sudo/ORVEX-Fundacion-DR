@@ -44,6 +44,13 @@ export const translations = {
     rice: "Arroz · bolsa 5 lb", beans: "Habichuelas · bolsa 2 lb", oil: "Aceite · botella 1 L", milk: "Leche UHT · caja",
     enoughStock: "Existencia suficiente", stockWarning: "El sistema impedirá ensamblar cantidades mayores que la existencia disponible.",
     saveKit: "Guardar definición", assembleKit: "Preparar ensamblaje sintético",
+    assessmentPeriod: "Período evaluado", householdSize: "Personas en el hogar", adults: "Adultos", children: "Niños",
+    foodConcern: "¿Hubo preocupación de que los alimentos se terminaran?", foodQuality: "¿El hogar no pudo comer alimentos saludables o variados?",
+    foodReduction: "¿Alguna persona redujo porciones o saltó comidas?", foodShortage: "¿Alguna persona pasó un día completo sin comer?",
+    never: "Nunca", sometimes: "Algunas veces", often: "Frecuentemente", preliminaryResult: "Resultado preliminar explicable",
+    highFoodRisk: "Riesgo alimentario alto", riskFactors: "Factores considerados", answersRecorded: "Respuestas afirmativas o frecuentes",
+    childFactor: "Presencia de menores", recentAssessment: "Evaluación actual", advisoryOnly: "Esta puntuación es orientativa. No puede negar asistencia y requiere decisión humana documentada.",
+    saveAssessment: "Guardar evaluación sintética", sendCaseReview: "Enviar a revisión del caso",
   },
   en: {
     appName: "ORVEX Foundation DR", search: "Search ORVEX", location: "Santo Domingo East",
@@ -88,6 +95,13 @@ export const translations = {
     rice: "Rice · 5 lb bag", beans: "Beans · 2 lb bag", oil: "Oil · 1 L bottle", milk: "UHT milk · carton",
     enoughStock: "Sufficient stock", stockWarning: "The system will prevent assembly quantities greater than available stock.",
     saveKit: "Save definition", assembleKit: "Prepare synthetic assembly",
+    assessmentPeriod: "Assessment period", householdSize: "People in household", adults: "Adults", children: "Children",
+    foodConcern: "Was the household worried that food would run out?", foodQuality: "Was the household unable to eat healthy or varied food?",
+    foodReduction: "Did anyone reduce portions or skip meals?", foodShortage: "Did anyone go a full day without eating?",
+    never: "Never", sometimes: "Sometimes", often: "Often", preliminaryResult: "Explainable preliminary result",
+    highFoodRisk: "High food-security risk", riskFactors: "Factors considered", answersRecorded: "Affirmative or frequent responses",
+    childFactor: "Children present", recentAssessment: "Current assessment", advisoryOnly: "This score is advisory. It cannot deny assistance and requires a documented human decision.",
+    saveAssessment: "Save synthetic assessment", sendCaseReview: "Send for case review",
   },
 } as const;
 
