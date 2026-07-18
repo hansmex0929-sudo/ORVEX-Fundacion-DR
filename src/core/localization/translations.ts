@@ -115,6 +115,13 @@ export const translations = {
     unstableIncome: "Ingreso inestable", foodInsecurity: "Inseguridad alimentaria", housingRepairNeed: "Necesidad de reparación de vivienda",
     householdPrivacy: "La dirección precisa, GPS, documentos de menores y otros campos restringidos se muestran solo con permiso y acceso registrado.",
     householdUpdated: "Composición del hogar actualizada", assessmentCompleted: "Evaluación de alimentos completada", assistanceApproved: "Asistencia aprobada",
+    identitySummary: "Resumen de identidad", preferredContact: "Contacto preferido", consentStatus: "Estado de consentimiento",
+    governmentIdentifier: "Identificador gubernamental", maskedIdentifier: "•••-•••••••-•", restrictedField: "Campo restringido",
+    contactMethods: "Métodos de contacto", homeAddress: "Dirección del hogar", relationships: "Relaciones",
+    householdRelationship: "Miembro del hogar", emergencyContact: "Contacto de emergencia", communicationConsent: "Consentimiento de comunicación",
+    consentGranted: "Consentimiento otorgado", whatsappPreferred: "WhatsApp preferido", addressVerified: "Dirección verificada",
+    personPrivacy: "Los identificadores, documentos, GPS y datos sensibles están enmascarados. Revelarlos requiere permiso, propósito y registro de acceso.",
+    identityUpdated: "Datos de identidad actualizados", consentRecorded: "Consentimiento registrado", addressLinked: "Dirección vinculada",
   },
   en: {
     appName: "ORVEX Foundation DR", search: "Search ORVEX", location: "Santo Domingo East",
@@ -230,6 +237,13 @@ export const translations = {
     unstableIncome: "Unstable income", foodInsecurity: "Food insecurity", housingRepairNeed: "Housing repair need",
     householdPrivacy: "Precise address, GPS, child documents, and other restricted fields display only with permission and logged access.",
     householdUpdated: "Household composition updated", assessmentCompleted: "Food assessment completed", assistanceApproved: "Assistance approved",
+    identitySummary: "Identity summary", preferredContact: "Preferred contact", consentStatus: "Consent status",
+    governmentIdentifier: "Government identifier", maskedIdentifier: "•••-•••••••-•", restrictedField: "Restricted field",
+    contactMethods: "Contact methods", homeAddress: "Home address", relationships: "Relationships",
+    householdRelationship: "Household member", emergencyContact: "Emergency contact", communicationConsent: "Communication consent",
+    consentGranted: "Consent granted", whatsappPreferred: "WhatsApp preferred", addressVerified: "Address verified",
+    personPrivacy: "Identifiers, documents, GPS, and sensitive data are masked. Revealing them requires permission, purpose, and logged access.",
+    identityUpdated: "Identity details updated", consentRecorded: "Consent recorded", addressLinked: "Address linked",
   },
 } as const;
 
