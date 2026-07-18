@@ -7,6 +7,8 @@ import { syntheticSession, hasPermission } from "@/core/authorization/permission
 import { translations, type Locale, type TranslationKey } from "@/core/localization/translations";
 import { screens } from "@/modules/screens/registry";
 
+const aviationAppUrl = process.env.NEXT_PUBLIC_ORVEX_AVIATION_URL ?? "https://orvex-aviation.com";
+
 type LanguageContextValue = { locale: Locale; setLocale: (locale: Locale) => void; t: (key: TranslationKey) => string };
 const LanguageContext = createContext<LanguageContextValue | null>(null);
 export const useLanguage = () => {
@@ -32,7 +34,7 @@ export function AppShell({ children }: { children: React.ReactNode }) {
         <header className="topbar">
           <button className="mobile-menu" onClick={()=>setMenuOpen((value)=>!value)} aria-label="Abrir menú">☰</button>
           <label className="global-search"><span>⌕</span><input aria-label={t("search")} placeholder={t("search")}/></label>
-          <div className="header-actions"><span className="location">⌖ {t("location")}</span><button title={t("notifications")}>●</button><label className="language"><span className="sr-only">{t("language")}</span><select value={locale} onChange={(event)=>setLocale(event.target.value as Locale)}><option value="es">ES</option><option value="en">EN</option></select></label><button className="profile">AR</button></div>
+          <div className="header-actions"><a className="aviation-link" href={aviationAppUrl} target="_blank" rel="noopener noreferrer">ORVEX Aviation ↗</a><span className="location">⌖ {t("location")}</span><button title={t("notifications")}>●</button><label className="language"><span className="sr-only">{t("language")}</span><select value={locale} onChange={(event)=>setLocale(event.target.value as Locale)}><option value="es">ES</option><option value="en">EN</option></select></label><button className="profile">AR</button></div>
         </header>
         <main>{children}</main>
       </div>
