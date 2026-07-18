@@ -108,6 +108,13 @@ export const translations = {
     schoolMaterials: "Material escolar", riceBag: "Arroz · bolsa 5 lb", firstAidKit: "Kit de primeros auxilios",
     hygieneKit: "Kit de higiene familiar", notebookPack: "Paquete de cuadernos", noExpiration: "No aplica",
     itemCatalogSafeguard: "Los datos de lote, procedencia, inspección y vencimiento permanecen vinculados al artículo y a cada movimiento.",
+    householdSummary: "Resumen del hogar", householdComposition: "Composición del hogar", currentAssistance: "Asistencia vigente",
+    vulnerabilityIndicators: "Indicadores de vulnerabilidad", relationship: "Relación", age: "Edad",
+    primaryApplicant: "Solicitante principal", daughter: "Hija", son: "Hijo", dependent: "Dependiente",
+    monthlyFoodSupport: "Apoyo alimentario mensual", educationMaterials: "Materiales educativos", nextReview: "Próxima revisión",
+    unstableIncome: "Ingreso inestable", foodInsecurity: "Inseguridad alimentaria", housingRepairNeed: "Necesidad de reparación de vivienda",
+    householdPrivacy: "La dirección precisa, GPS, documentos de menores y otros campos restringidos se muestran solo con permiso y acceso registrado.",
+    householdUpdated: "Composición del hogar actualizada", assessmentCompleted: "Evaluación de alimentos completada", assistanceApproved: "Asistencia aprobada",
   },
   en: {
     appName: "ORVEX Foundation DR", search: "Search ORVEX", location: "Santo Domingo East",
@@ -216,6 +223,13 @@ export const translations = {
     schoolMaterials: "School materials", riceBag: "Rice · 5 lb bag", firstAidKit: "First-aid kit",
     hygieneKit: "Family hygiene kit", notebookPack: "Notebook pack", noExpiration: "Not applicable",
     itemCatalogSafeguard: "Lot, provenance, inspection, and expiration data remain linked to the item and every movement.",
+    householdSummary: "Household summary", householdComposition: "Household composition", currentAssistance: "Current assistance",
+    vulnerabilityIndicators: "Vulnerability indicators", relationship: "Relationship", age: "Age",
+    primaryApplicant: "Primary applicant", daughter: "Daughter", son: "Son", dependent: "Dependent",
+    monthlyFoodSupport: "Monthly food support", educationMaterials: "Education materials", nextReview: "Next review",
+    unstableIncome: "Unstable income", foodInsecurity: "Food insecurity", housingRepairNeed: "Housing repair need",
+    householdPrivacy: "Precise address, GPS, child documents, and other restricted fields display only with permission and logged access.",
+    householdUpdated: "Household composition updated", assessmentCompleted: "Food assessment completed", assistanceApproved: "Assistance approved",
   },
 } as const;
 
