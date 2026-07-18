@@ -71,6 +71,12 @@ export const translations = {
     housingReferral: "Referimiento para evaluación de vivienda", clinicReferral: "Referimiento a clínica comunitaria",
     homeVisitCompleted: "Visita domiciliaria completada", casePlanUpdated: "Plan del caso actualizado",
     referralSent: "Referimiento comunitario enviado", addCaseNote: "Agregar nota sintética", restrictedCaseNote: "Las notas sensibles requieren permisos elevados y acceso registrado.",
+    activeVolunteers: "Voluntarios activos", scheduledToday: "Programados hoy", trainingDue: "Capacitación por vencer",
+    volunteerHours: "Horas este mes", upcomingShifts: "Próximos turnos", qualifications: "Calificaciones y alertas",
+    distributionShift: "Distribución de alimentos", warehouseShift: "Preparación de almacén", communityVisit: "Visita comunitaria",
+    role: "Función", shiftTime: "Horario", attendance: "Asistencia", confirmed: "Confirmado", checkInPending: "Registro pendiente",
+    firstAid: "Primeros auxilios", safeguardingTraining: "Capacitación de protección", driverQualification: "Autorización de conductor",
+    expiresIn: "Vence en {days} días", valid: "Vigente", assignVolunteer: "Asignar voluntario", openRoster: "Abrir lista",
   },
   en: {
     appName: "ORVEX Foundation DR", search: "Search ORVEX", location: "Santo Domingo East",
@@ -142,6 +148,12 @@ export const translations = {
     housingReferral: "Housing assessment referral", clinicReferral: "Community clinic referral",
     homeVisitCompleted: "Home visit completed", casePlanUpdated: "Case plan updated",
     referralSent: "Community referral sent", addCaseNote: "Add synthetic note", restrictedCaseNote: "Sensitive notes require elevated permission and logged access.",
+    activeVolunteers: "Active volunteers", scheduledToday: "Scheduled today", trainingDue: "Training expiring",
+    volunteerHours: "Hours this month", upcomingShifts: "Upcoming shifts", qualifications: "Qualifications and alerts",
+    distributionShift: "Food distribution", warehouseShift: "Warehouse preparation", communityVisit: "Community visit",
+    role: "Role", shiftTime: "Shift time", attendance: "Attendance", confirmed: "Confirmed", checkInPending: "Check-in pending",
+    firstAid: "First aid", safeguardingTraining: "Safeguarding training", driverQualification: "Driver qualification",
+    expiresIn: "Expires in {days} days", valid: "Valid", assignVolunteer: "Assign volunteer", openRoster: "Open roster",
   },
 } as const;
 
