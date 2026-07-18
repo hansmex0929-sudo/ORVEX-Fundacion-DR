@@ -17,8 +17,10 @@ const groups = {
 const priority: Array<[string,string,Bilingual,keyof typeof groups,Permission,ScreenKind]> = [
   ["EXE-010","exe-010",{es:"Panel ejecutivo",en:"Executive dashboard"},"executive","executive.read","dashboard"],
   ["IDN-020","idn-020",{es:"Directorio de personas",en:"People directory"},"identity","identity.read","directory"],
+  ["IDN-021","idn-021",{es:"Crear persona y buscar duplicados",en:"Create person and duplicate search"},"identity","identity.read","form"],
   ["IDN-022","idn-022",{es:"Perfil de persona",en:"Person profile"},"identity","identity.read","profile"],
   ["FAM-030","fam-030",{es:"Directorio de familias y hogares",en:"Family and household directory"},"families","household.read","directory"],
+  ["FAM-031","fam-031",{es:"Nuevo ingreso de hogar",en:"New household intake"},"families","household.read","form"],
   ["FAM-032","fam-032",{es:"Perfil del hogar",en:"Household profile"},"families","household.read","profile"],
   ["FAM-036","fam-036",{es:"Evaluación de inseguridad alimentaria",en:"Food insecurity assessment"},"families","assessment.read","form"],
   ["CAS-040","cas-040",{es:"Panel de casos",en:"Case dashboard"},"cases","case.read","dashboard"],

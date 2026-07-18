@@ -23,6 +23,10 @@ export const translations = {
     northRoute: "Ruta Norte · 8 paradas", eastRoute: "Ruta Este · 12 paradas", hainaRoute: "Ruta Haina · 6 paradas",
     vehicle: "Vehículo", demoMap: "Mapa de demostración", attentionRequired: "Requiere atención", monthChange: "↑ 8% este mes",
     profileArea: "Los Mina · Santo Domingo Este", noOperational: "No operativo",
+    givenNames: "Nombres", familyNames: "Apellidos", birthDate: "Fecha de nacimiento", phone: "Teléfono",
+    duplicateSearch: "Búsqueda de duplicados obligatoria", duplicateSearchBody: "Se buscarán coincidencias de nombre, fecha de nacimiento, teléfono y dirección antes de permitir la creación.",
+    runDuplicateSearch: "Buscar posibles duplicados", householdName: "Nombre del hogar", primaryContact: "Contacto principal",
+    address: "Dirección", householdMembers: "Miembros estimados",
   },
   en: {
     appName: "ORVEX Foundation DR", search: "Search ORVEX", location: "Santo Domingo East",
@@ -46,6 +50,10 @@ export const translations = {
     northRoute: "North Route · 8 stops", eastRoute: "East Route · 12 stops", hainaRoute: "Haina Route · 6 stops",
     vehicle: "Vehicle", demoMap: "Demonstration map", attentionRequired: "Requires attention", monthChange: "↑ 8% this month",
     profileArea: "Los Mina · Santo Domingo East", noOperational: "Not operational",
+    givenNames: "Given names", familyNames: "Family names", birthDate: "Date of birth", phone: "Phone",
+    duplicateSearch: "Mandatory duplicate search", duplicateSearchBody: "Name, date of birth, phone, and address matches will be checked before creation is allowed.",
+    runDuplicateSearch: "Search for possible duplicates", householdName: "Household name", primaryContact: "Primary contact",
+    address: "Address", householdMembers: "Estimated members",
   },
 } as const;
 

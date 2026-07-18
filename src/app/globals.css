@@ -10,5 +10,7 @@
 @media(max-width:480px){.kpi-grid{grid-template-columns:1fr}.page-header .primary-button{position:sticky;bottom:10px;width:100%}.global-search{display:none}.topbar{justify-content:space-between}.planner{min-height:650px}.login-story h1{font-size:2.2rem}}
 .aviation-link{border:1px solid #e0cfd0;border-radius:10px;background:#fff4f4;padding:9px 12px;color:var(--red-900);font-size:.72rem;font-weight:800;text-decoration:none}.aviation-link:hover{background:#f9e2e4}
 @media(max-width:780px){.aviation-link{display:none}}
+.primary-button{text-decoration:none}
 .record-link{display:grid;width:34px;height:34px;place-items:center;border-radius:10px;background:#f6e5e6;color:var(--red-700);font-size:1.2rem;font-weight:800;text-decoration:none;transition:.2s}
 .record-link:hover,.record-link:focus-visible{background:var(--red-700);color:#fff;outline:2px solid #e6a6aa;outline-offset:2px}
+.duplicate-panel{margin-top:18px;border:1px solid #e6c86f;border-radius:14px;background:#fff9e8;padding:16px;color:#5f4c18}.duplicate-panel p{margin:7px 0 12px;font-size:.78rem;line-height:1.5}.duplicate-panel button{border:1px solid #c9a847;border-radius:10px;background:#fff;padding:9px 12px;color:#5f4c18;font-weight:800}
