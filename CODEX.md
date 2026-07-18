@@ -12,8 +12,12 @@ You are implementing ORVEX Fundación DR. Treat the documents in `/docs` as the 
 6. Use synthetic seed data only.
 7. Every create, update, merge, approval, rejection, export, login, permission change, and sensitive-record access must be auditable.
 8. Consequential AI outputs are recommendations only and require human review.
-9. Build Spanish and English localization from the beginning.
+9. Build localization for Spanish (`es`), English (`en`), Haitian Creole (`ht`), and French (`fr`) from the beginning. Every visible label, message, report title, validation error, notification, and printable document must use localization keys rather than hard-coded text.
 10. Keep the application functional on localhost:3000.
+11. Read and implement `docs/UI_SCREEN_REGISTRY.md` as the controlling UI specification.
+12. One screen must equal one route/page/view. Do not combine multiple application screens into a collage, split dashboard, or composite page.
+13. Every screen must display its unique sequential page ID and a language selector that preserves the current workflow when changing language.
+14. Use the official ORVEX spelling, logo, and red/black/white visual identity. Never write ORVIX.
 
 ## Preferred technical baseline
 
@@ -39,7 +43,8 @@ A feature is not complete until it includes:
 - Input validation
 - Audit events
 - Error and empty states
-- Localization keys
+- Localization keys for `es`, `en`, `ht`, and `fr`
+- Responsive and accessible screen implementation matching the approved screen registry
 - Unit or integration tests
 - End-to-end test for critical workflows
 - Updated documentation
@@ -47,4 +52,4 @@ A feature is not complete until it includes:
 
 ## First implementation assignment
 
-Implement Phase 0 and Phase 1 from `docs/ROADMAP.md`: repository foundation, local environment, authentication skeleton, RBAC foundation, audit framework, and shared identity core. Do not start donor campaigns, advanced AI, or financial accounting before the core identity and security layers are stable.
+Implement Phase 0 and Phase 1 from `docs/ROADMAP.md`: repository foundation, local environment, authentication skeleton, RBAC foundation, audit framework, shared identity core, localization framework, and the shared application shell required by `docs/UI_SCREEN_REGISTRY.md`. Do not start donor campaigns, advanced AI, or financial accounting before the core identity and security layers are stable.
