@@ -39,6 +39,11 @@ export const translations = {
     acknowledgement: "La persona receptora confirma que recibió los artículos indicados.",
     immutableProof: "Después de enviar, la evidencia no se reemplaza silenciosamente. Toda corrección crea un evento de auditoría.",
     capturePhoto: "Adjuntar fotografía sintética", captureSignature: "Capturar confirmación", submitProof: "Enviar prueba de entrega",
+    kitName: "Nombre del kit", targetHouseholds: "Hogares objetivo", availableStock: "Existencia disponible",
+    kitComponents: "Componentes del paquete", component: "Componente", perKit: "Por kit", requiredTotal: "Total requerido",
+    rice: "Arroz · bolsa 5 lb", beans: "Habichuelas · bolsa 2 lb", oil: "Aceite · botella 1 L", milk: "Leche UHT · caja",
+    enoughStock: "Existencia suficiente", stockWarning: "El sistema impedirá ensamblar cantidades mayores que la existencia disponible.",
+    saveKit: "Guardar definición", assembleKit: "Preparar ensamblaje sintético",
   },
   en: {
     appName: "ORVEX Foundation DR", search: "Search ORVEX", location: "Santo Domingo East",
@@ -78,6 +83,11 @@ export const translations = {
     acknowledgement: "The recipient confirms receipt of the listed items.",
     immutableProof: "After submission, evidence is not silently replaced. Every correction creates an audit event.",
     capturePhoto: "Attach synthetic photograph", captureSignature: "Capture confirmation", submitProof: "Submit proof of delivery",
+    kitName: "Kit name", targetHouseholds: "Target households", availableStock: "Available stock",
+    kitComponents: "Package components", component: "Component", perKit: "Per kit", requiredTotal: "Required total",
+    rice: "Rice · 5 lb bag", beans: "Beans · 2 lb bag", oil: "Oil · 1 L bottle", milk: "UHT milk · carton",
+    enoughStock: "Sufficient stock", stockWarning: "The system will prevent assembly quantities greater than available stock.",
+    saveKit: "Save definition", assembleKit: "Prepare synthetic assembly",
   },
 } as const;
 
