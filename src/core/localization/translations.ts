@@ -90,6 +90,13 @@ export const translations = {
     eligibilityStatus: "Elegibilidad", eligible: "Elegible", needsReview: "Requiere revisión", requestedOn: "Solicitada",
     assistanceSafeguard: "Las alertas no rechazan solicitudes automáticamente. Un usuario autorizado debe revisar evidencia, límites y posibles coincidencias.",
     openRequest: "Abrir solicitud",
+    totalStockUnits: "Unidades en existencia", lowStockItems: "Artículos con baja existencia", expiringLots: "Lotes próximos a vencer",
+    quarantineItems: "Artículos en cuarentena", warehouseStock: "Existencia por almacén", inventoryAlerts: "Alertas de inventario",
+    centralWarehouse: "Almacén central", eastWarehouse: "Almacén Este", hainaWarehouse: "Almacén Haina",
+    cerealLot: "Lote de cereal infantil", medicineLot: "Lote de medicinas", hygieneKits: "Kits de higiene",
+    expiresSoon: "Vence pronto", inspectionPending: "Inspección pendiente", reorderRequired: "Reposición requerida",
+    lotNumber: "Número de lote", quantity: "Cantidad", warehouse: "Almacén", openInventory: "Abrir artículo",
+    stockSafeguard: "Las transacciones no pueden dejar existencia negativa. Los ajustes requieren motivo, permiso y evento de auditoría.",
   },
   en: {
     appName: "ORVEX Foundation DR", search: "Search ORVEX", location: "Santo Domingo East",
@@ -180,6 +187,13 @@ export const translations = {
     eligibilityStatus: "Eligibility", eligible: "Eligible", needsReview: "Needs review", requestedOn: "Requested",
     assistanceSafeguard: "Alerts do not automatically reject requests. An authorized user must review evidence, limits, and possible matches.",
     openRequest: "Open request",
+    totalStockUnits: "Units in stock", lowStockItems: "Low-stock items", expiringLots: "Lots expiring soon",
+    quarantineItems: "Quarantined items", warehouseStock: "Stock by warehouse", inventoryAlerts: "Inventory alerts",
+    centralWarehouse: "Central warehouse", eastWarehouse: "East warehouse", hainaWarehouse: "Haina warehouse",
+    cerealLot: "Infant cereal lot", medicineLot: "Medicine lot", hygieneKits: "Hygiene kits",
+    expiresSoon: "Expiring soon", inspectionPending: "Inspection pending", reorderRequired: "Reorder required",
+    lotNumber: "Lot number", quantity: "Quantity", warehouse: "Warehouse", openInventory: "Open item",
+    stockSafeguard: "Transactions cannot leave negative stock. Adjustments require a reason, permission, and audit event.",
   },
 } as const;
 
