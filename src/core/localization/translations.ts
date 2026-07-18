@@ -58,6 +58,13 @@ export const translations = {
     duplicateExplanation: "Coincidencia parcial de nombre, teléfono y sector; requiere comparación humana.",
     inventoryExplanation: "La tendencia sintética indica mayor demanda de paquetes durante los próximos 14 días.",
     aiAdvisory: "La IA no aprueba, rechaza ni modifica registros. Una persona autorizada debe revisar y documentar cada decisión.",
+    auditReadiness: "Preparación para auditoría", policyCoverage: "Cobertura de políticas", accessReviews: "Revisiones de acceso",
+    evidenceComplete: "Evidencia completa", openExceptions: "Excepciones abiertas", complianceWork: "Trabajo de cumplimiento",
+    owner: "Responsable", dueDate: "Fecha límite", policyAcknowledgements: "Reconocimientos de políticas",
+    quarterlyAccessReview: "Revisión trimestral de acceso", retentionReview: "Revisión de retención y archivo",
+    restrictedEvents: "Eventos restringidos recientes", sensitiveView: "Vista de registro sensible", exportRequested: "Exportación solicitada",
+    permissionDenied: "Acceso no autorizado bloqueado", protectedSummary: "Los detalles sensibles están ocultos; solo se muestran metadatos permitidos.",
+    openCompliance: "Abrir revisión",
   },
   en: {
     appName: "ORVEX Foundation DR", search: "Search ORVEX", location: "Santo Domingo East",
@@ -116,6 +123,13 @@ export const translations = {
     duplicateExplanation: "Partial name, phone, and neighborhood match; human comparison is required.",
     inventoryExplanation: "The synthetic trend indicates higher package demand during the next 14 days.",
     aiAdvisory: "AI does not approve, reject, or modify records. An authorized person must review and document every decision.",
+    auditReadiness: "Audit readiness", policyCoverage: "Policy coverage", accessReviews: "Access reviews",
+    evidenceComplete: "Evidence complete", openExceptions: "Open exceptions", complianceWork: "Compliance work",
+    owner: "Owner", dueDate: "Due date", policyAcknowledgements: "Policy acknowledgements",
+    quarterlyAccessReview: "Quarterly access review", retentionReview: "Retention and archival review",
+    restrictedEvents: "Recent restricted events", sensitiveView: "Sensitive record viewed", exportRequested: "Export requested",
+    permissionDenied: "Unauthorized access blocked", protectedSummary: "Sensitive details are hidden; only permitted metadata is shown.",
+    openCompliance: "Open review",
   },
 } as const;
 
