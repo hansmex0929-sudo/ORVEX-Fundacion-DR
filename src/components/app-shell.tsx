@@ -20,9 +20,11 @@ export const useLanguage = () => {
 export function AppShell({ children }: { children: React.ReactNode }) {
   const [locale,setLocale]=useState<Locale>("es");
   const [menuOpen,setMenuOpen]=useState(false);
+  const [searchQuery,setSearchQuery]=useState("");
   const pathname=usePathname();
   const t=(key:TranslationKey)=>translations[locale][key];
   const nav=useMemo(()=>screens.filter((screen)=>screen.highFidelity&&hasPermission(syntheticSession,screen.permission)),[]);
+  const searchResults=useMemo(()=>{const query=searchQuery.trim().toLocaleLowerCase(locale);if(!query)return [];return nav.filter((screen)=>`${screen.id} ${screen.title[locale]} ${screen.group[locale]}`.toLocaleLowerCase(locale).includes(query)).slice(0,6)},[locale,nav,searchQuery]);
   return <LanguageContext.Provider value={{locale,setLocale,t}}>
     <div className="app-frame">
       <aside className={`sidebar ${menuOpen?"sidebar-open":""}`} aria-label="Navegación principal">
@@ -33,7 +35,7 @@ export function AppShell({ children }: { children: React.ReactNode }) {
       <div className="content-frame">
         <header className="topbar">
           <button className="mobile-menu" onClick={()=>setMenuOpen((value)=>!value)} aria-label="Abrir menú">☰</button>
-          <label className="global-search"><span>⌕</span><input aria-label={t("search")} placeholder={t("search")}/></label>
+          <div className="global-search-wrap"><label className="global-search"><span>⌕</span><input aria-label={t("search")} placeholder={t("search")} value={searchQuery} onChange={(event)=>setSearchQuery(event.target.value)}/></label>{searchQuery?<div className="search-results" role="listbox" aria-label={t("searchResults")}>{searchResults.length?searchResults.map((screen)=><Link role="option" key={screen.id} href={`/screens/${screen.slug}`} onClick={()=>setSearchQuery("")}><span>{screen.id}</span><strong>{screen.title[locale]}</strong></Link>):<p>{t("noSearchResults")}</p>}</div>:null}</div>
           <div className="header-actions"><a className="aviation-link" href={aviationAppUrl} target="_blank" rel="noopener noreferrer">ORVEX Aviation ↗</a><span className="location">⌖ {t("location")}</span><button title={t("notifications")}>●</button><label className="language"><span className="sr-only">{t("language")}</span><select value={locale} onChange={(event)=>setLocale(event.target.value as Locale)}><option value="es">ES</option><option value="en">EN</option></select></label><button className="profile">AR</button></div>
         </header>
         <main>{children}</main>

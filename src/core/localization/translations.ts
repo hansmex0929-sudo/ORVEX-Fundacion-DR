@@ -27,6 +27,7 @@ export const translations = {
     duplicateSearch: "Búsqueda de duplicados obligatoria", duplicateSearchBody: "Se buscarán coincidencias de nombre, fecha de nacimiento, teléfono y dirección antes de permitir la creación.",
     runDuplicateSearch: "Buscar posibles duplicados", householdName: "Nombre del hogar", primaryContact: "Contacto principal",
     address: "Dirección", householdMembers: "Miembros estimados",
+    searchResults: "Resultados de pantallas", noSearchResults: "No se encontraron pantallas permitidas",
   },
   en: {
     appName: "ORVEX Foundation DR", search: "Search ORVEX", location: "Santo Domingo East",
@@ -54,6 +55,7 @@ export const translations = {
     duplicateSearch: "Mandatory duplicate search", duplicateSearchBody: "Name, date of birth, phone, and address matches will be checked before creation is allowed.",
     runDuplicateSearch: "Search for possible duplicates", householdName: "Household name", primaryContact: "Primary contact",
     address: "Address", householdMembers: "Estimated members",
+    searchResults: "Screen results", noSearchResults: "No permitted screens found",
   },
 } as const;
 
