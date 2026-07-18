@@ -97,6 +97,12 @@ export const translations = {
     expiresSoon: "Vence pronto", inspectionPending: "Inspección pendiente", reorderRequired: "Reposición requerida",
     lotNumber: "Número de lote", quantity: "Cantidad", warehouse: "Almacén", openInventory: "Abrir artículo",
     stockSafeguard: "Las transacciones no pueden dejar existencia negativa. Los ajustes requieren motivo, permiso y evento de auditoría.",
+    plannedDeliveries: "Entregas planificadas", activeRoutes: "Rutas activas", completedToday: "Completadas hoy",
+    failedAttempts: "Intentos fallidos", routeProgress: "Progreso de rutas", deliveryExceptions: "Excepciones de entrega",
+    stopsCompleted: "Paradas completadas", driver: "Conductor", vehicleLabel: "Vehículo", proofStatus: "Estado de evidencia",
+    completeProof: "Evidencia completa", proofPending: "Evidencia pendiente", recipientUnavailable: "Persona receptora no disponible",
+    addressNotFound: "Dirección no localizada", vehicleDelay: "Retraso del vehículo", reschedule: "Reprogramar",
+    openRoute: "Abrir ruta", custodySafeguard: "Cada carga, transferencia, intento y prueba de entrega conserva su cadena de custodia y evento de auditoría.",
   },
   en: {
     appName: "ORVEX Foundation DR", search: "Search ORVEX", location: "Santo Domingo East",
@@ -194,6 +200,12 @@ export const translations = {
     expiresSoon: "Expiring soon", inspectionPending: "Inspection pending", reorderRequired: "Reorder required",
     lotNumber: "Lot number", quantity: "Quantity", warehouse: "Warehouse", openInventory: "Open item",
     stockSafeguard: "Transactions cannot leave negative stock. Adjustments require a reason, permission, and audit event.",
+    plannedDeliveries: "Planned deliveries", activeRoutes: "Active routes", completedToday: "Completed today",
+    failedAttempts: "Failed attempts", routeProgress: "Route progress", deliveryExceptions: "Delivery exceptions",
+    stopsCompleted: "Stops completed", driver: "Driver", vehicleLabel: "Vehicle", proofStatus: "Evidence status",
+    completeProof: "Evidence complete", proofPending: "Evidence pending", recipientUnavailable: "Recipient unavailable",
+    addressNotFound: "Address not found", vehicleDelay: "Vehicle delay", reschedule: "Reschedule",
+    openRoute: "Open route", custodySafeguard: "Every load, transfer, attempt, and proof of delivery retains its chain of custody and audit event.",
   },
 } as const;
 
