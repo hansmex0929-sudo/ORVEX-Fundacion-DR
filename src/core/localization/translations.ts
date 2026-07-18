@@ -103,6 +103,11 @@ export const translations = {
     completeProof: "Evidencia completa", proofPending: "Evidencia pendiente", recipientUnavailable: "Persona receptora no disponible",
     addressNotFound: "Dirección no localizada", vehicleDelay: "Retraso del vehículo", reschedule: "Reprogramar",
     openRoute: "Abrir ruta", custodySafeguard: "Cada carga, transferencia, intento y prueba de entrega conserva su cadena de custodia y evento de auditoría.",
+    itemName: "Artículo", sku: "Código SKU", category: "Categoría", lots: "Lotes", expiration: "Vencimiento",
+    unit: "Unidad", foodStaples: "Alimentos básicos", medicalSupplies: "Suministros médicos", hygiene: "Higiene",
+    schoolMaterials: "Material escolar", riceBag: "Arroz · bolsa 5 lb", firstAidKit: "Kit de primeros auxilios",
+    hygieneKit: "Kit de higiene familiar", notebookPack: "Paquete de cuadernos", noExpiration: "No aplica",
+    itemCatalogSafeguard: "Los datos de lote, procedencia, inspección y vencimiento permanecen vinculados al artículo y a cada movimiento.",
   },
   en: {
     appName: "ORVEX Foundation DR", search: "Search ORVEX", location: "Santo Domingo East",
@@ -206,6 +211,11 @@ export const translations = {
     completeProof: "Evidence complete", proofPending: "Evidence pending", recipientUnavailable: "Recipient unavailable",
     addressNotFound: "Address not found", vehicleDelay: "Vehicle delay", reschedule: "Reschedule",
     openRoute: "Open route", custodySafeguard: "Every load, transfer, attempt, and proof of delivery retains its chain of custody and audit event.",
+    itemName: "Item", sku: "SKU", category: "Category", lots: "Lots", expiration: "Expiration",
+    unit: "Unit", foodStaples: "Food staples", medicalSupplies: "Medical supplies", hygiene: "Hygiene",
+    schoolMaterials: "School materials", riceBag: "Rice · 5 lb bag", firstAidKit: "First-aid kit",
+    hygieneKit: "Family hygiene kit", notebookPack: "Notebook pack", noExpiration: "Not applicable",
+    itemCatalogSafeguard: "Lot, provenance, inspection, and expiration data remain linked to the item and every movement.",
   },
 } as const;
 
