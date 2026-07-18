@@ -36,6 +36,7 @@ const priority: Array<[string,string,Bilingual,keyof typeof groups,Permission,Sc
   ["DEL-076","del-076",{es:"Prueba de entrega",en:"Proof of delivery"},"delivery","delivery.complete","proof"],
   ["VOL-090","vol-090",{es:"Panel de voluntariado",en:"Volunteer dashboard"},"volunteers","volunteer.manage","dashboard"],
   ["DON-140","don-140",{es:"Resumen de donaciones",en:"Donation summary"},"other","executive.read","dashboard"],
+  ["DON-141","don-141",{es:"Directorio básico de donantes",en:"Basic donor directory"},"other","executive.read","directory"],
   ["CMP-170","cmp-170",{es:"Panel de cumplimiento",en:"Compliance dashboard"},"compliance","compliance.read","dashboard"],
   ["AIX-180","aix-180",{es:"Centro de comando de IA",en:"AI command center"},"ai","ai.review","dashboard"],
 ];
