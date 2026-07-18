@@ -77,6 +77,12 @@ export const translations = {
     role: "Función", shiftTime: "Horario", attendance: "Asistencia", confirmed: "Confirmado", checkInPending: "Registro pendiente",
     firstAid: "Primeros auxilios", safeguardingTraining: "Capacitación de protección", driverQualification: "Autorización de conductor",
     expiresIn: "Vence en {days} días", valid: "Vigente", assignVolunteer: "Asignar voluntario", openRoster: "Abrir lista",
+    householdsServed: "Hogares atendidos", peopleReached: "Personas alcanzadas", assistanceDelivered: "Asistencias entregadas",
+    urgentApprovals: "Aprobaciones urgentes", provinceCoverage: "Cobertura por provincia", programmeMix: "Distribución por programa",
+    santoDomingo: "Santo Domingo", sanCristobal: "San Cristóbal", santiago: "Santiago", laAltagracia: "La Altagracia",
+    foodProgramme: "Alimentación", educationProgramme: "Educación", healthProgramme: "Salud", housingProgramme: "Vivienda",
+    executiveQueue: "Cola ejecutiva", budgetException: "Excepción de presupuesto", safeguardingReview: "Revisión de protección",
+    inventoryShortage: "Escasez prevista de inventario", decisionDue: "Decisión requerida", privacySafeMetrics: "Los indicadores agregados no muestran datos personales ni registros restringidos.",
   },
   en: {
     appName: "ORVEX Foundation DR", search: "Search ORVEX", location: "Santo Domingo East",
@@ -154,6 +160,12 @@ export const translations = {
     role: "Role", shiftTime: "Shift time", attendance: "Attendance", confirmed: "Confirmed", checkInPending: "Check-in pending",
     firstAid: "First aid", safeguardingTraining: "Safeguarding training", driverQualification: "Driver qualification",
     expiresIn: "Expires in {days} days", valid: "Valid", assignVolunteer: "Assign volunteer", openRoster: "Open roster",
+    householdsServed: "Households served", peopleReached: "People reached", assistanceDelivered: "Assistance delivered",
+    urgentApprovals: "Urgent approvals", provinceCoverage: "Coverage by province", programmeMix: "Programme distribution",
+    santoDomingo: "Santo Domingo", sanCristobal: "San Cristóbal", santiago: "Santiago", laAltagracia: "La Altagracia",
+    foodProgramme: "Food", educationProgramme: "Education", healthProgramme: "Health", housingProgramme: "Housing",
+    executiveQueue: "Executive queue", budgetException: "Budget exception", safeguardingReview: "Safeguarding review",
+    inventoryShortage: "Forecast inventory shortage", decisionDue: "Decision required", privacySafeMetrics: "Aggregate indicators do not expose personal data or restricted records.",
   },
 } as const;
 
