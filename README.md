@@ -1,10 +1,20 @@
 # ORVEX Fundación DR
 
-Private internal charitable-operations platform for the Dominican Republic, designed to run locally at `http://localhost:3000` during development and to remain modular, secure, auditable, and expansion-ready.
+Private internal charitable-operations platform for the Dominican Republic, designed for secure Cloudflare-hosted production deployment and framework-managed local development without any permanent localhost or port-3000 dependency.
 
 ## Mission
 
 ORVEX Fundación DR manages families, households, beneficiaries, community needs, assistance approvals, inventory, warehouses, deliveries, volunteers, projects, medical and education support, documents, communications, compliance, analytics, and AI-assisted prioritization.
+
+## Deployment standard
+
+- Cloudflare Workers & Pages is the primary production platform.
+- GitHub is the source of truth and deployment trigger.
+- Vercel may be retained only as an explicit backup after a deployable application is added.
+- Local development ports are temporary framework details and must not be embedded in production architecture, scripts, documentation, or health checks.
+- Secrets and beneficiary data must be stored in protected runtime services, never committed to source control.
+
+See `docs/DEPLOYMENT.md` for the controlling deployment requirements.
 
 ## Important scope decision
 
@@ -16,7 +26,8 @@ Donor management is intentionally lightweight because most donations will be han
 2. Read `docs/MASTER_BLUEPRINT.md`.
 3. Read `docs/ARCHITECTURE.md` and `docs/DATABASE.md`.
 4. Read `docs/UI_SCREEN_REGISTRY.md` before implementing any user interface.
-5. Implement the backlog in `docs/ROADMAP.md` sequentially.
+5. Read `docs/DEPLOYMENT.md` before adding production infrastructure.
+6. Implement the backlog in `docs/ROADMAP.md` sequentially.
 
 ## Core principles
 
