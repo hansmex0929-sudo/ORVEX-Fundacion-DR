@@ -1,0 +1,218 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum RecordStatus {
+  ACTIVE
+  INACTIVE
+  ARCHIVED
+}
+
+enum HouseholdRole {
+  HEAD
+  SPOUSE
+  CHILD
+  DEPENDENT
+  OTHER
+}
+
+enum RelationshipType {
+  PARENT
+  CHILD
+  SPOUSE
+  SIBLING
+  GUARDIAN
+  OTHER
+}
+
+enum AuditOutcome {
+  SUCCESS
+  DENIED
+  FAILURE
+}
+
+model Tenant {
+  id          String       @id @default(cuid())
+  name        String
+  status      RecordStatus @default(ACTIVE)
+  createdAt   DateTime     @default(now())
+  updatedAt   DateTime     @updatedAt
+  users       User[]
+  people      Person[]
+  households  Household[]
+  addresses   Address[]
+  auditEvents AuditEvent[]
+}
+
+model User {
+  id           String       @id @default(cuid())
+  tenantId     String
+  email        String
+  passwordHash String
+  displayName  String
+  status       RecordStatus @default(ACTIVE)
+  createdAt    DateTime     @default(now())
+  updatedAt    DateTime     @updatedAt
+  tenant       Tenant       @relation(fields: [tenantId], references: [id])
+  roles        UserRole[]
+  @@unique([tenantId, email])
+  @@index([tenantId])
+}
+
+model Role {
+  id          String           @id @default(cuid())
+  code        String           @unique
+  name        String
+  users       UserRole[]
+  permissions RolePermission[]
+}
+
+model Permission {
+  id          String           @id @default(cuid())
+  scope       String           @unique
+  description String
+  roles       RolePermission[]
+}
+
+model UserRole {
+  userId String
+  roleId String
+  user   User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  role   Role @relation(fields: [roleId], references: [id], onDelete: Cascade)
+  @@id([userId, roleId])
+}
+
+model RolePermission {
+  roleId       String
+  permissionId String
+  role         Role       @relation(fields: [roleId], references: [id], onDelete: Cascade)
+  permission   Permission @relation(fields: [permissionId], references: [id], onDelete: Cascade)
+  @@id([roleId, permissionId])
+}
+
+model Person {
+  id                 String       @id @default(cuid())
+  tenantId           String
+  status             RecordStatus @default(ACTIVE)
+  givenName          String
+  familyName         String
+  preferredName      String?
+  birthDate          DateTime?
+  provenance         String       @default("manual")
+  duplicateSearchRef String
+  createdAt          DateTime     @default(now())
+  updatedAt          DateTime     @updatedAt
+  version            Int          @default(1)
+  tenant             Tenant       @relation(fields: [tenantId], references: [id])
+  contacts           ContactMethod[]
+  addresses          PersonAddress[]
+  memberships        HouseholdMembership[]
+  relationshipsFrom  Relationship[] @relation("FromPerson")
+  relationshipsTo    Relationship[] @relation("ToPerson")
+  @@index([tenantId, familyName, givenName])
+}
+
+model ContactMethod {
+  id        String  @id @default(cuid())
+  personId  String
+  type      String
+  value     String
+  isPrimary Boolean @default(false)
+  consented Boolean @default(false)
+  person    Person  @relation(fields: [personId], references: [id], onDelete: Cascade)
+}
+
+model Address {
+  id           String   @id @default(cuid())
+  tenantId     String
+  label        String
+  line1        String
+  sector       String?
+  municipality String
+  province     String
+  countryCode  String   @default("DO")
+  latitude     Decimal? @db.Decimal(9, 6)
+  longitude    Decimal? @db.Decimal(9, 6)
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+  tenant       Tenant   @relation(fields: [tenantId], references: [id])
+  people       PersonAddress[]
+  households   Household[]
+  @@index([tenantId, province, municipality])
+}
+
+model PersonAddress {
+  personId  String
+  addressId String
+  validFrom DateTime @default(now())
+  validTo   DateTime?
+  person    Person   @relation(fields: [personId], references: [id], onDelete: Cascade)
+  address   Address  @relation(fields: [addressId], references: [id], onDelete: Cascade)
+  @@id([personId, addressId, validFrom])
+}
+
+model Household {
+  id        String       @id @default(cuid())
+  tenantId  String
+  addressId String?
+  name      String
+  status    RecordStatus @default(ACTIVE)
+  createdAt DateTime     @default(now())
+  updatedAt DateTime     @updatedAt
+  version   Int          @default(1)
+  tenant    Tenant       @relation(fields: [tenantId], references: [id])
+  address   Address?     @relation(fields: [addressId], references: [id])
+  members   HouseholdMembership[]
+  @@index([tenantId, name])
+}
+
+model HouseholdMembership {
+  id          String        @id @default(cuid())
+  householdId String
+  personId    String
+  role        HouseholdRole
+  startDate   DateTime      @default(now())
+  endDate     DateTime?
+  household   Household     @relation(fields: [householdId], references: [id], onDelete: Cascade)
+  person      Person        @relation(fields: [personId], references: [id], onDelete: Cascade)
+  @@index([householdId, endDate])
+  @@index([personId, endDate])
+}
+
+model Relationship {
+  id           String           @id @default(cuid())
+  tenantId     String
+  fromPersonId String
+  toPersonId   String
+  type         RelationshipType
+  startDate    DateTime?
+  endDate      DateTime?
+  createdAt    DateTime         @default(now())
+  fromPerson   Person           @relation("FromPerson", fields: [fromPersonId], references: [id], onDelete: Cascade)
+  toPerson     Person           @relation("ToPerson", fields: [toPersonId], references: [id], onDelete: Cascade)
+  @@unique([tenantId, fromPersonId, toPersonId, type])
+}
+
+model AuditEvent {
+  id            String       @id @default(cuid())
+  tenantId      String
+  actorId       String?
+  action        String
+  entityType    String
+  entityId      String?
+  occurredAt    DateTime     @default(now())
+  correlationId String
+  sourceIp      String?
+  userAgent     String?
+  reason        String?
+  safeSummary   Json?
+  outcome       AuditOutcome
+  tenant        Tenant       @relation(fields: [tenantId], references: [id])
+  @@index([tenantId, occurredAt])
+  @@index([correlationId])
+}
