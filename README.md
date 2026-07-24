@@ -43,3 +43,21 @@ Donor management is intentionally lightweight because most donations will be han
 - One application screen per page/view, with a unique sequential page ID
 - Official ORVEX red, black, and white visual identity throughout
 - No real beneficiary data in source control
+
+## UI sprint development
+
+```bash
+pnpm install
+pnpm dev
+```
+
+Open `http://localhost:3000`. The Issue #2 implementation provides a Spanish-first bilingual application shell, server-authorized route registry, twenty high-fidelity priority screen shells, and explicitly non-operational placeholders for the remaining blueprint routes. All displayed records are synthetic.
+
+Validation commands:
+
+```bash
+pnpm lint
+pnpm typecheck
+pnpm test
+pnpm build
+```
