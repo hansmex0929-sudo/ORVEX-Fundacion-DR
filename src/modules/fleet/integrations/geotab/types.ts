@@ -101,12 +101,37 @@ export type FleetTelematicsProvider = {
   getFeed<T>(typeName: string, fromVersion?: string): Promise<GeotabFeedResult<T>>;
 };
 
+export type StagedFeedBatch = {
+  batchId: string;
+  typeName: string;
+  fromVersion: string | null;
+  toVersion: string;
+  recordCount: number;
+};
+
 export type GeotabPersistencePort = {
   saveCurrentTelemetry(records: NormalizedVehicleTelemetry[]): Promise<void>;
   saveAlerts(alerts: FleetTelemetryAlert[]): Promise<void>;
   getFeedCursor(typeName: string): Promise<string | null>;
-  saveFeedCursor(typeName: string, toVersion: string): Promise<void>;
-  processFeedBatch<T>(typeName: string, records: T[]): Promise<void>;
+
+  /**
+   * Atomically stores the provider payload and its new cursor before processing.
+   * A production adapter should use one database transaction for this operation.
+   */
+  stageFeedBatch<T>(input: {
+    typeName: string;
+    fromVersion: string | null;
+    toVersion: string;
+    records: T[];
+    stagedAt: string;
+  }): Promise<StagedFeedBatch>;
+
+  /** Must be idempotent so a failed worker can safely retry the staged batch. */
+  processStagedFeedBatch(batchId: string): Promise<void>;
+
+  /** Advances the active cursor only after the staged batch is processed. */
+  completeFeedBatch(batchId: string, completedAt: string): Promise<void>;
+
   recordSyncRun(input: {
     typeName: string;
     startedAt: string;
