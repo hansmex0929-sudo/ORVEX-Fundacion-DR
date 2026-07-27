@@ -90,6 +90,12 @@ function isFailure<T>(response: JsonRpcResponse<T>): response is JsonRpcFailure 
   return "error" in response;
 }
 
+function feedResultsLimit(typeName: string): number {
+  if (["Device", "User"].includes(typeName)) return 5_000;
+  if (["Zone", "Trip", "Route"].includes(typeName)) return 10_000;
+  return 50_000;
+}
+
 function freshnessFor(
   observedAt: string,
   communicating: boolean,
@@ -119,7 +125,9 @@ export function normalizeDeviceStatus(
     longitude: record.longitude,
     speedKph: typeof record.speed === "number" ? record.speed : null,
     headingDegrees: typeof record.bearing === "number" ? record.bearing : null,
-    ignitionOn: typeof record.isDriving === "boolean" ? record.isDriving : null,
+    // DeviceStatusInfo exposes driving state, not a definitive ignition value.
+    // Ignition is populated later from supported StatusData diagnostics.
+    ignitionOn: null,
     isDriving: typeof record.isDriving === "boolean" ? record.isDriving : null,
     isCommunicating: communicating,
     driverExternalId: record.driver?.id ?? null,
@@ -237,8 +245,8 @@ export class GeotabClient implements FleetTelematicsProvider {
   ): Promise<GeotabFeedResult<T>> {
     return this.call<GeotabFeedResult<T>>("GetFeed", {
       typeName,
-      resultsLimit: 50_000,
-      ...(fromVersion ? { fromVersion } : {}),
+      resultsLimit: feedResultsLimit(typeName),
+      ...(fromVersion !== undefined ? { fromVersion } : {}),
     });
   }
 
