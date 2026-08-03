@@ -1,6 +1,12 @@
 import { NextResponse } from "next/server";
 import { authorizeGeotabRequest } from "@/modules/fleet/integrations/geotab/authorization";
+import { toGeotabHttpError } from "@/modules/fleet/integrations/geotab/http-error";
 import { getGeotabReadModelPort } from "@/modules/fleet/integrations/geotab/read-model";
+
+const PRIVATE_JSON_HEADERS = {
+  "cache-control": "private, no-store",
+  "x-content-type-options": "nosniff",
+};
 
 export async function GET(request: Request) {
   try {
@@ -12,11 +18,13 @@ export async function GET(request: Request) {
     const records = await getGeotabReadModelPort().listCurrentTelemetry(context);
     return NextResponse.json(records, {
       status: 200,
-      headers: { "cache-control": "private, no-store" },
+      headers: PRIVATE_JSON_HEADERS,
     });
   } catch (error) {
-    const code = error instanceof Error ? error.message : "GEOTAB_TELEMETRY_FAILED";
-    const status = code.includes("NOT_CONFIGURED") ? 503 : 403;
-    return NextResponse.json({ error: code }, { status });
+    const failure = toGeotabHttpError(error, "GEOTAB_TELEMETRY_FAILED");
+    return NextResponse.json(
+      { error: failure.code },
+      { status: failure.status, headers: PRIVATE_JSON_HEADERS },
+    );
   }
 }
