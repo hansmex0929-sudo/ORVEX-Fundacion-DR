@@ -30,7 +30,7 @@ function createService(batchSizes: number[]): GeotabFleetSyncService {
       return {
         data: Array.from(
           { length: recordCount },
-          (_, index) => ({ index }) as T,
+          (_, index) => ({ index }) as unknown as T,
         ),
         toVersion: `version-${batchIndex}`,
       };
@@ -73,7 +73,7 @@ describe("Geotab feed pagination", () => {
   it.each([
     ["Device", 5_000],
     ["Zone", 10_000],
-  ])(
+  ] as const)(
     "continues draining a %s feed when the provider returns a full batch",
     async (typeName, fullBatchSize) => {
       const service = createService([fullBatchSize, 1]);
