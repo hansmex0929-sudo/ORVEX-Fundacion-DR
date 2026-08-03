@@ -1,3 +1,4 @@
+import { geotabFeedResultsLimit } from "./feed-limits";
 import type {
   FleetTelemetryAlert,
   FleetTelematicsProvider,
@@ -117,7 +118,7 @@ export class GeotabFleetSyncService {
       recordCount: result.data.length,
       fromVersion,
       toVersion: result.toVersion,
-      caughtUp: result.data.length < 50_000,
+      caughtUp: result.data.length < geotabFeedResultsLimit(typeName),
     };
   }
 
