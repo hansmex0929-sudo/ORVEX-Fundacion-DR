@@ -1,3 +1,4 @@
+import { geotabFeedResultsLimit } from "./feed-limits";
 import type {
   FleetTelematicsProvider,
   GeotabCredentials,
@@ -88,12 +89,6 @@ function normalizeHost(value: string): string {
 
 function isFailure<T>(response: JsonRpcResponse<T>): response is JsonRpcFailure {
   return "error" in response;
-}
-
-function feedResultsLimit(typeName: string): number {
-  if (["Device", "User"].includes(typeName)) return 5_000;
-  if (["Zone", "Trip", "Route"].includes(typeName)) return 10_000;
-  return 50_000;
 }
 
 function freshnessFor(
@@ -245,7 +240,7 @@ export class GeotabClient implements FleetTelematicsProvider {
   ): Promise<GeotabFeedResult<T>> {
     return this.call<GeotabFeedResult<T>>("GetFeed", {
       typeName,
-      resultsLimit: feedResultsLimit(typeName),
+      resultsLimit: geotabFeedResultsLimit(typeName),
       ...(fromVersion !== undefined ? { fromVersion } : {}),
     });
   }
