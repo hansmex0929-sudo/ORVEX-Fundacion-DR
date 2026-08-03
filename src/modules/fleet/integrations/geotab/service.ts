@@ -1,3 +1,4 @@
+import { geotabFeedResultsLimit } from "./feed-limits";
 import type {
   FleetTelemetryAlert,
   FleetTelematicsProvider,
@@ -22,13 +23,6 @@ const DEFAULT_POLICY: FleetAlertPolicy = {
   staleAfterMinutes: 15,
   excessiveSpeedKph: 120,
 };
-
-/** Keep these limits aligned with the MyGeotab GetFeed request limits. */
-export function geotabFeedResultsLimit(typeName: string): number {
-  if (["Device", "User"].includes(typeName)) return 5_000;
-  if (["Zone", "Trip", "Route"].includes(typeName)) return 10_000;
-  return 50_000;
-}
 
 export function deriveTelemetryAlerts(
   records: NormalizedVehicleTelemetry[],
