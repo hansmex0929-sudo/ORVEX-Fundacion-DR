@@ -1,8 +1,6 @@
 import { describe, expect, it } from "vitest";
-import {
-  GeotabFleetSyncService,
-  geotabFeedResultsLimit,
-} from "../service";
+import { geotabFeedResultsLimit } from "../feed-limits";
+import { GeotabFleetSyncService } from "../service";
 import type {
   FleetTelematicsProvider,
   GeotabPersistencePort,
