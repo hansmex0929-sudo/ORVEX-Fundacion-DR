@@ -70,12 +70,13 @@ describe("Geotab feed pagination", () => {
     expect(geotabFeedResultsLimit("LogRecord")).toBe(50_000);
   });
 
-  it.each([
-    ["Device", 5_000],
-    ["Zone", 10_000],
-  ] as const)(
-    "continues draining a %s feed when the provider returns a full batch",
-    async (typeName, fullBatchSize) => {
+  it("continues draining feeds when the provider returns a full type-specific batch", async () => {
+    const cases = [
+      { typeName: "Device", fullBatchSize: 5_000 },
+      { typeName: "Zone", fullBatchSize: 10_000 },
+    ] as const;
+
+    for (const { typeName, fullBatchSize } of cases) {
       const service = createService([fullBatchSize, 1]);
 
       const results = await service.drainFeed(typeName);
@@ -91,8 +92,8 @@ describe("Geotab feed pagination", () => {
         recordCount: 1,
         caughtUp: true,
       });
-    },
-  );
+    }
+  });
 
   it("stops after a partial Device batch", async () => {
     const service = createService([4_999, 1]);
