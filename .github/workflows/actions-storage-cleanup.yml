@@ -1,0 +1,75 @@
+name: One-time Actions storage cleanup
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - .github/workflows/actions-storage-cleanup.yml
+  workflow_dispatch:
+
+permissions:
+  actions: write
+  contents: read
+
+jobs:
+  cleanup:
+    name: Remove Actions artifacts and caches
+    runs-on: ubuntu-latest
+    steps:
+      - name: Delete repository Actions storage
+        uses: actions/github-script@v8
+        with:
+          script: |
+            const owner = context.repo.owner;
+            const repo = context.repo.repo;
+            let artifactCount = 0;
+            let artifactBytes = 0;
+            let cacheCount = 0;
+            let cacheBytes = 0;
+
+            while (true) {
+              const response = await github.request(
+                'GET /repos/{owner}/{repo}/actions/artifacts',
+                { owner, repo, per_page: 100 }
+              );
+              const artifacts = response.data.artifacts || [];
+              if (artifacts.length === 0) break;
+
+              for (const artifact of artifacts) {
+                artifactBytes += artifact.size_in_bytes || 0;
+                await github.request(
+                  'DELETE /repos/{owner}/{repo}/actions/artifacts/{artifact_id}',
+                  { owner, repo, artifact_id: artifact.id }
+                );
+                artifactCount += 1;
+              }
+            }
+
+            while (true) {
+              const response = await github.request(
+                'GET /repos/{owner}/{repo}/actions/caches',
+                { owner, repo, per_page: 100 }
+              );
+              const caches = response.data.actions_caches || [];
+              if (caches.length === 0) break;
+
+              for (const cache of caches) {
+                cacheBytes += cache.size_in_bytes || 0;
+                await github.request(
+                  'DELETE /repos/{owner}/{repo}/actions/caches/{cache_id}',
+                  { owner, repo, cache_id: cache.id }
+                );
+                cacheCount += 1;
+              }
+            }
+
+            core.summary
+              .addHeading('GitHub Actions storage cleanup')
+              .addRaw(`Deleted ${artifactCount} artifacts (${artifactBytes} bytes).\n`)
+              .addRaw(`Deleted ${cacheCount} caches (${cacheBytes} bytes).\n`)
+              .write();
+
+            core.notice(
+              `Deleted ${artifactCount} artifacts and ${cacheCount} caches from ${owner}/${repo}.`
+            );
