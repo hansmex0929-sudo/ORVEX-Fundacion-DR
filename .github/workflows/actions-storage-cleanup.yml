@@ -11,6 +11,7 @@ on:
 permissions:
   actions: write
   contents: read
+  statuses: write
 
 jobs:
   cleanup:
@@ -64,12 +65,26 @@ jobs:
               }
             }
 
+            const description =
+              `Deleted ${artifactCount} artifacts and ${cacheCount} caches; storage clear`;
+
+            await github.request(
+              'POST /repos/{owner}/{repo}/statuses/{sha}',
+              {
+                owner,
+                repo,
+                sha: context.sha,
+                state: 'success',
+                context: 'orvex/actions-storage-cleanup',
+                description,
+                target_url: `https://github.com/${owner}/${repo}/actions`
+              }
+            );
+
             core.summary
               .addHeading('GitHub Actions storage cleanup')
               .addRaw(`Deleted ${artifactCount} artifacts (${artifactBytes} bytes).\n`)
               .addRaw(`Deleted ${cacheCount} caches (${cacheBytes} bytes).\n`)
               .write();
 
-            core.notice(
-              `Deleted ${artifactCount} artifacts and ${cacheCount} caches from ${owner}/${repo}.`
-            );
+            core.notice(`${description} in ${owner}/${repo}.`);
